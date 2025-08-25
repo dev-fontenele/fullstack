@@ -5,6 +5,9 @@ class User(db.Model):
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
+    cnpj = db.Column(db.String(100), nullable=False)
+    celular = db.Coumn(db.String(100), nullable=False)
+    status = db.Column(db.String(100), nullable=False)
 
     def to_dict(self):
         return {
