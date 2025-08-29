@@ -3,3 +3,9 @@ flask_sqlalchemy
 mysql-connector-python
 werkzeug==2.0.2
 sqlalchemy==1.4.49
+
+Flask-Migrate
+python-dotenv
+PyMySQL
+PyJWT
+Werkzeug
