@@ -1,7 +1,12 @@
 FROM python:3.8-slim
-WORKDIR /src
-COPY requirements.txt requirements.txt
 
+# Define o diretório de trabalho
+WORKDIR /src
+
+# Copia o arquivo de requisitos
+COPY requirements.txt ./
+
+# Instala as dependências Python
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /src

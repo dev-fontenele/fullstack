@@ -1,4 +1,9 @@
-db/
+.db/
+.db
+db
+db/mysql.sock
+db/auto.cnf
+db/binlog.index
+db/ib_buffer_pool
 __pycache__/
 *.pyc
-.env
