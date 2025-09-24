@@ -1,13 +1,4 @@
-# Ignore the database folder
-.db/
-
-# Ignore environment variables
-.env
-
-# Ignore Python cache files
+db/
 __pycache__/
 *.pyc
-
-# Ignore specific files
-*.pyo
-*.log
+.env
