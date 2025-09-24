@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, send_from_directory, request, redirect, url_for
 from src.Application.Controllers.user_controller import UserController
+from src.Application.Controllers.seller_controller import SellerController 
+
 
 def init_routes(app):
     @app.route("/")
@@ -27,3 +29,15 @@ def init_routes(app):
     @app.route("/images/<path:filename>")
     def images_files(filename):
         return send_from_directory("frontend/images", filename)
+
+    @app.route("/health", methods=["GET"])
+    def health_check():
+        return jsonify({"status": "ok"}), 200
+
+    @app.route("/api/sellers", methods=["POST"])
+    def register_seller_route():
+        return SellerController.register_seller()
+
+    @app.route("/api/sellers/activate", methods=["POST"])
+    def activate_seller_route():
+        return SellerController.activate_seller()
