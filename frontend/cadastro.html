@@ -11,46 +11,21 @@
     </header>
 
     <main class="container">
-        <form id="cadastroForm">
+        <form id="registerForm">
             <h2>Cadastro</h2>
-            <input type="text" name="name" placeholder="Nome" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Senha" required>
-            <input type="password" name="confirmPassword" placeholder="Confirme a Senha" required>
+            <input type="text" id="name" name="name" placeholder="Nome" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Senha" required>
+            <input type="text" id="cnpj" name="cnpj" placeholder="CNPJ" required>
+            <input type="text" id="celular" name="celular" placeholder="Celular" required>
             <button type="submit">Cadastrar</button>
         </form>
+        <div id="result"></div>
     </main>
 
     <footer>
         &copy; 2025 Miniaturas de Luxo. Todos os direitos reservados.
     </footer>
-
-    <!-- Script do cadastro -->
-    <script>
-    document.getElementById('cadastroForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const form = e.target;
-        const data = {
-            name: form.name.value,
-            email: form.email.value,
-            password: form.password.value,
-            confirmPassword: form.confirmPassword.value
-        };
-
-        const res = await fetch('/user', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
-
-        if (res.ok) {
-            window.location.href = '/login_page'; // redireciona após cadastro
-        } else {
-            const error = await res.text();
-            alert("Erro: " + error);
-        }
-    });
-    </script>
+    <script src="javascript/script.js"></script>
 </body>
 </html>
