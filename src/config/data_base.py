@@ -1,3 +1,4 @@
+#Código de conexão com o banco de dados MySQL usando SQLAlchemy e Flask
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
