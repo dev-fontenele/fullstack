@@ -11,6 +11,7 @@
     </header>
 
     <main class="container">
+<<<<<<< HEAD
         <form id="registerForm">
             <h2>Cadastro</h2>
             <input type="text" id="name" name="name" placeholder="Nome" required>
@@ -21,11 +22,52 @@
             <button type="submit">Cadastrar</button>
         </form>
         <div id="result"></div>
+=======
+        <form id="cadastroForm">
+            <h2>Cadastro</h2>
+            <input type="text" name="name" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Senha" required>
+            <input type="password" name="confirmPassword" placeholder="Confirme a Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+>>>>>>> b3e452e (atualizações do projeto)
     </main>
 
     <footer>
         &copy; 2025 Miniaturas de Luxo. Todos os direitos reservados.
     </footer>
+<<<<<<< HEAD
     <script src="javascript/script.js"></script>
+=======
+
+    
+    <script>
+    document.getElementById('cadastroForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const data = {
+            name: form.name.value,
+            email: form.email.value,
+            password: form.password.value,
+            confirmPassword: form.confirmPassword.value
+        };
+
+        const res = await fetch('/user', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+            window.location.href = '/login_page'; 
+        } else {
+            const error = await res.text();
+            alert("Erro: " + error);
+        }
+    });
+    </script>
+>>>>>>> b3e452e (atualizações do projeto)
 </body>
 </html>

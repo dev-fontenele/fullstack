@@ -5,6 +5,10 @@ from src.Application.Service.user_service import UserService
 class UserController:
     @staticmethod
     def register_user():
+<<<<<<< HEAD
+=======
+        
+>>>>>>> b3e452e (atualizações do projeto)
         data = request.get_json() if request.is_json else request.form
 
         user = UserService.create_user(
@@ -16,13 +20,25 @@ class UserController:
             status=data.get("status", None)
         )
 
+<<<<<<< HEAD
         if not request.is_json:
             return redirect(url_for('login_page'))
 
+=======
+        
+        if not request.is_json:
+            return redirect(url_for('login_page'))
+
+        
+>>>>>>> b3e452e (atualizações do projeto)
         return jsonify({"mensagem": "User salvo com sucesso", "usuario": user.to_dict()})
 
     @staticmethod
     def login_user():
+<<<<<<< HEAD
+=======
+        
+>>>>>>> b3e452e (atualizações do projeto)
         if request.is_json:
             data = request.get_json()
         else:
@@ -35,7 +51,15 @@ class UserController:
                 return make_response(jsonify({"erro": "Email ou senha inválidos"}), 401)
             else:
                 return redirect(url_for('login_page'))  
+<<<<<<< HEAD
         if request.is_json:
             return make_response(jsonify({"mensagem": "Login bem-sucedido", "usuario": user.to_dict()}), 200)
         else:
+=======
+        
+        if request.is_json:
+            return make_response(jsonify({"mensagem": "Login bem-sucedido", "usuario": user.to_dict()}), 200)
+        else:
+            
+>>>>>>> b3e452e (atualizações do projeto)
             return redirect(url_for('index_page'))

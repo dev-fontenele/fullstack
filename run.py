@@ -4,10 +4,10 @@ from flask_jwt_extended import JWTManager
 from flask_bcrypt import Bcrypt
 
 from src.config.data_base import db, init_db
-from src.infrastructure.model.auth import auth_bp
+from src.Infrastructure.Model.auth import auth_bp
 
 # Importa o modelo User do caminho correto
-from src.infrastructure.model.user import User
+from src.Infrastructure.Model.user import User
 
 bcrypt = Bcrypt()
 
@@ -29,4 +29,4 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5004)

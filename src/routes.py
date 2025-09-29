@@ -1,13 +1,21 @@
 from flask import Flask, jsonify, send_from_directory, request, redirect, url_for
 from src.Application.Controllers.user_controller import UserController
+<<<<<<< HEAD
 from src.Application.Controllers.seller_controller import SellerController 
 
 
 def init_routes(app):
+=======
+
+def init_routes(app):
+
+    
+>>>>>>> b3e452e (atualizações do projeto)
     @app.route("/")
     def index_page():
         return send_from_directory("frontend", "index.html")
 
+<<<<<<< HEAD
     @app.route("/login_page", methods=["GET"])
     def login_page():
         return send_from_directory("frontend", "login.html")
@@ -22,10 +30,34 @@ def init_routes(app):
     def login_user():
         return UserController.login_user()
 
+=======
+    
+    @app.route("/login_page", methods=["GET"])
+    def login_page():  
+        return send_from_directory("frontend", "login.html")
+
+    
+    @app.route("/cadastro_page", methods=["GET"])
+    def cadastro_page():
+        return send_from_directory("frontend", "cadastro.html")
+        
+    
+    @app.route("/user", methods=["POST"])
+    def register_user_route():
+        return UserController.register_user()
+
+    
+    @app.route("/login", methods=["GET"])
+    def login_user():
+        return UserController.login_user()
+
+    
+>>>>>>> b3e452e (atualizações do projeto)
     @app.route("/css/<path:filename>")
     def css_files(filename):
         return send_from_directory("frontend/css", filename)
 
+<<<<<<< HEAD
     @app.route("/images/<path:filename>")
     def images_files(filename):
         return send_from_directory("frontend/images", filename)
@@ -41,3 +73,9 @@ def init_routes(app):
     @app.route("/api/sellers/activate", methods=["POST"])
     def activate_seller_route():
         return SellerController.activate_seller()
+=======
+    
+    @app.route("/images/<path:filename>")
+    def images_files(filename):
+        return send_from_directory("frontend/images", filename)
+>>>>>>> b3e452e (atualizações do projeto)
