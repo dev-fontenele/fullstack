@@ -7,9 +7,15 @@ services:
     ports:
       - "127.0.0.1:3306:3306"
     environment:
+<<<<<<< HEAD
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: market_management
+=======
+      MYSQL_ROOT_USER: user
+      MYSQL_ROOT_PASSWORD: 123user123
+      MYSQL_DATABASE: minha_base
+>>>>>>> b3e452e (atualizações do projeto)
     volumes:
       - .db:/var/lib/mysql
   web:

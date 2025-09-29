@@ -4,7 +4,7 @@ from src.config.data_base import db
 from flask_bcrypt import Bcrypt
 
 # Importa o modelo User do caminho correto
-from src.infrastructure.model.user import User
+from src.Infrastructure.Model.user import User
 
 auth_bp = Blueprint('auth', __name__)
 bcrypt = Bcrypt()

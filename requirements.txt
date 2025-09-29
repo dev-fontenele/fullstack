@@ -10,3 +10,4 @@ PyMySQL
 PyJWT
 Werkzeug
 Flask-Bcrypt
+passlib>=1.7.4,<2
