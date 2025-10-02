@@ -5,7 +5,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(255), nullable=False)
     cnpj = db.Column(db.String(100), nullable=False, default="00000000000000")
     celular = db.Column(db.String(100), nullable=False, default="00000000000")
     status = db.Column(db.String(100), nullable=False, default="ativo")

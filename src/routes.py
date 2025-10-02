@@ -3,7 +3,6 @@ from src.Application.Controllers.user_controller import UserController
 
 def init_routes(app):
 
-    
     @app.route("/")
     def index_page():
         return send_from_directory("frontend", "index.html")
@@ -24,7 +23,7 @@ def init_routes(app):
         return UserController.register_user()
 
     
-    @app.route("/login", methods=["GET"])
+    @app.route("/login", methods=["POST"])
     def login_user():
         return UserController.login_user()
 

@@ -16,7 +16,7 @@ class UserController:
             celular=data.get("celular", None),
             status=data.get("status", None)
         )
-
+        
         
         if not request.is_json:
             return redirect(url_for('login_page'))
